@@ -7,6 +7,7 @@ var includeUpperArray = 'ABCDEFGHJKMNPQRSTUVWXYZ'; //did not include I, L, O
 var includeUpper = includeUpperArray.split("");
 var specialCharacterArray = "!@#%^&*?()<>/-+"; 
 var specialCharacter = specialCharacterArray.split("");
+var password = [];
 
 // Assignment Code - Provided by BCS instructor
 var generateBtn = document.querySelector("#generate");
@@ -14,15 +15,18 @@ var generateBtn = document.querySelector("#generate");
 //function to generate password
 function generatePassword(){
   var password = ""; 
-  var passwordLength = prompt ("How many characters? (between 8 & 128) ");
+  var passwordLength = parseInt (prompt ("How many characters? (between 8 & 128) "));
       if (!passwordLength){ 
       alert ("Please pick a number");
+      generatePassword();
       }
       if (isNaN(passwordLength)){
       alert ("please pick a number");
+      generatePassword();
       }  
       if (passwordLength < 8 || passwordLength > 128 ){ 
       alert ("Please pick between 8 & 128");
+      generatePassword();
       } else {
 
     var selectedRandoms = [];
